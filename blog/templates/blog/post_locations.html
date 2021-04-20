@@ -1,0 +1,29 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+    <span class = "text-muted h1">Post Locations
+        <span class="h4">
+            {% if number_of_posts == 0 or number_of_posts == 1  %}
+                ( {{ number_of_posts }} Post )
+            {% else %}
+                ( {{ number_of_posts }} Posts )
+            {% endif %}
+        </span>
+    </span>
+    <div id = "map" >
+        {{ foliumMap|safe }}
+    </div>
+
+    <script>
+
+        // to show the search box
+        $(document).ready(function(){  
+            $("#searchparams").show();
+        })
+        
+
+    </script>
+   
+{% endblock content %}

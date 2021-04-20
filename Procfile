@@ -1,0 +1,1 @@
+web: gunicorn hand2handproject.wsgi --log-file -
